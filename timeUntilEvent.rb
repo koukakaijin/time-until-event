@@ -1,5 +1,5 @@
 #!/usr/bin/ruby
-chaos = Time.new(2014,10,24,12,00,00)
+chaos = Time.new(2014,10,24,12,00,00) #set time to event
 today = Time.now
 system("cls")
 def panico(panic)
