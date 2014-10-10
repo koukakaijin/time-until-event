@@ -15,7 +15,10 @@ def requestData
 	s = gets.chomp
 	return t =[d.to_i,h.to_i,m.to_i,s.to_i]
 end
-if (!s.checkFile("Config/.conf.txt"))
+if !s.directory_exists?("Config")
+	Dir.mkdir("Config")
+end
+if (!s.file_exists?("Config/.conf.txt"))
 	e = requestData #set time to event
 	eventTime = t.addTime(e[0],e[1],e[2],e[3])
 	s.createFile("Config/.conf.txt",eventTime)
