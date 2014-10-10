@@ -20,8 +20,8 @@ class SystemUtils
 	def clear
 		os==:windows ? system("cls") : system("clear")
 	end
-	def checkFile(file)
-		return File.file?(file)
+	def file_exists?(file)
+		File.file?(file)
 	end
 	#create a file with the initial value
 	def createFile(file,time)
@@ -34,5 +34,8 @@ class SystemUtils
 		File.open(file, "r").each_line do |line|
 			return text << line
 		end
+	end
+	def directory_exists?(directory)
+		File.directory?(directory)
 	end
 end
